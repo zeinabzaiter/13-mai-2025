@@ -1,5 +1,3 @@
-# Recréer le code du tableau de bord combiné après réinitialisation de l'environnement
-combined_app_code = """
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -36,7 +34,7 @@ with tab1:
     fig.update_layout(yaxis=dict(range=[0, 30]), xaxis_title="Semaine", yaxis_title="Résistance (%)")
     st.plotly_chart(fig, use_container_width=True)
 
-# === Onglet 2 : Other Antibiotiques ===
+# === Onglet 2 : Autres Antibiotiques ===
 with tab2:
     st.header("🧪 Autres Antibiotiques - Staph aureus")
     df_other = pd.read_excel("other Antibiotiques staph aureus.xlsx")
@@ -93,11 +91,3 @@ with tab3:
                              mode='lines', name="Seuil bas", line=dict(dash='dot', color='red')))
     fig.update_layout(yaxis=dict(range=[0, 100]), xaxis_title="Semaine", yaxis_title="Résistance (%)")
     st.plotly_chart(fig, use_container_width=True)
-"""
-
-# Enregistrer ce fichier Python
-combined_dashboard_path = "/mnt/data/app_dashboard_complet.py"
-with open(combined_dashboard_path, "w") as f:
-    f.write(combined_app_code)
-
-combined_dashboard_path
